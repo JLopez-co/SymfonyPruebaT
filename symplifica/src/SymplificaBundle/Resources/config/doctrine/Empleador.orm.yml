@@ -1,0 +1,28 @@
+SymplificaBundle\Entity\Empleador:
+    type: entity
+    table: null
+    repositoryClass: SymplificaBundle\Repository\EmpleadorRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombreCompleto:
+            type: string
+            length: '100'
+        sexo:
+            type: string
+            length: '1'
+        documentoIdentidad:
+            type: integer
+        telefono:
+            type: integer
+        dirrecion:
+            type: string
+            length: '60'
+        fechaNacimiento:
+            type: string
+            length: '60'
+    lifecycleCallbacks: {  }

@@ -1,0 +1,18 @@
+SymplificaBundle\Entity\tipoContrato:
+    type: entity
+    table: null
+    repositoryClass: SymplificaBundle\Repository\tipoContratoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombreContrato:
+            type: string
+            length: '30'
+        descripcionContrato:
+            type: string
+            length: '200'
+    lifecycleCallbacks: {  }

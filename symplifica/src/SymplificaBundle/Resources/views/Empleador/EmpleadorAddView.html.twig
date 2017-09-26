@@ -1,0 +1,44 @@
+{% extends 'layout.html.twig'%}
+{% block title %} Symplifica-Empleador {% endblock%}
+  {% block body%}
+        <form class="col-md-12">
+        <h2>Agregar empleador</h2>
+        <div class="col-md-10">
+          <label class="col-md-12" for="txtNombre">Nombre del empleador</label>
+          <input class="col-md-6 " type="text" name="txtNombre" id="txtNombre" value="" placeholder="Ingrese el nombre completo del empleador" requiere>
+        </div>
+        <div class="col-md-10">
+          <label class="col-md-12" for="selectSexo">Sexo del empleador</label>
+          <select class="col-md-6" name="selectSexo" id="selectSexo">
+            <option value="A0">Selecione</option>
+            <option value="0">Femenino</option>
+            <option value="1">Masculino</option>
+          </select>
+        </div>
+        <div class="col-md-10">
+          <label class="col-md-12" for="txtCedula">Cedula</label>
+          <input class="col-md-6 " type="number" name="txtCedula" id="txtCedula" value="" placeholder="Ingrese la cedula del empleador">
+        </div>
+        <div class="col-md-10">
+          <label class="col-md-12" for="txtTelefono">Telefono</label>
+          <input class="col-md-6" type="number" name="txtTelefono" id="txtTelefono" value="" placeholder="Ingrese el telefono del empleador">
+        </div>
+        <div class="col-md-10">
+          <label class="col-md-12" for="txtDirrecion">Dirrecion</label>
+          <input class="col-md-6 " type="text" name="txtDirrecion" id="txtDirrecion" value="" placeholder="Ingrese la dirrecion del empleador">
+        </div>
+        <div class="col-md-10">
+          <label class="col-md-12" for="txtFechaNacimiento">Fecha nacimiento</label>
+          <input class="col-md-6 " type="date" name="txtFechaNacimiento" id="txtFechaNacimiento" value="" placeholder="Ingrese la fecha de nacimiento del empleador"> 
+  
+        </div>
+        <div class="col-md-6">
+            </br><button type="button" class="btn btn-success" id="btnAgregarEmpleador">Agregar empleador</button>
+        </div>
+      </form>
+  {% endblock%}
+{%block javaScripts%}
+  {{parent()}}
+  <script src="{{asset('bundles/symplifica/js/empleador.js')}}"> </script>
+
+{%endblock%}

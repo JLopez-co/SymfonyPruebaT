@@ -1,0 +1,85 @@
+{% extends 'layout.html.twig'%}
+{% block title %} Symplifica-Empleador {% endblock%}
+  {% block body%}
+
+    <div id="contentTable">
+      <label><h2>Agregar empleados</h2></label>
+    <div class="col-md-10">
+    <table class="table-hover" id="tableEmpleador">
+      <thead>
+        <th>Nombre empleador</th>
+        <th>cedula empleador</th>
+        <th>Dirrecion empleador</th>
+        <th></th>
+      </thead>
+      <tbody>
+       {%for empleador in empleadores%}   
+        <tr>
+          <td>{{empleador.nombreCompleto}}</td>
+          <td>{{empleador.documentoIdentidad}}</td>
+          <td>{{empleador.dirrecion}}</td>
+          <td>  <button type="button" class="btnEmpleadorAgre" value="{{empleador.id}}">Asignar empleados</button></td>
+        </tr>
+       {%endfor%} 
+    </tbody>
+  </table>
+  </div>
+ </div>
+
+  <div id="contentUsu" style="display:none">
+          <form class="col-md-12">
+        <h2>Agregar empleador</h2>
+        <div class="col-md-10">
+          <label class="col-md-12" for="txtNombre">Nombre del empleado</label>
+          <div class="col-md-6">
+            <input class="form-control inputs" type="text" name="txtNombre" id="txtNombre" value="" placeholder="Ingrese el nombre completo del empleado">
+          </div>
+        </div>
+        <div class="col-md-10">
+          <label class="col-md-12" for="selectSexo">Sexo del empleado</label>
+           <div class="col-md-6">
+ 
+          <select class="form-control " name="selectSexo" id="selectSexo">
+            <option value="A0">Selecione</option>
+            <option value="0">Femenino</option>
+            <option value="1">Masculino</option>
+          </select>
+          </div>
+        </div>
+        <div class="col-md-10">
+          <label class="col-md-12" for="txtCedula">Cedula</label>
+          <div class="col-md-6">
+            <input class="form-control inputs" type="number" name="txtCedula" id="txtCedula" value="" placeholder="Ingrese la cedula del empleado">
+          
+          </div>
+        </div>
+        <div class="col-md-10">
+          <label class="col-md-12" for="txtTelefono">Telefono</label>
+           <div class="col-md-6">
+            <input class="form-control inputs" type="number" name="txtTelefono" id="txtTelefono" value="" placeholder="Ingrese el telefono del empleador">
+          </div> 
+        </div>
+
+        <div class="col-md-10">
+          <label class="col-md-12" for="selectTipoContrato">Contratp del empleado</label>
+          <div class="col-md-6">
+          <select class="form-control" name="selectTipoContrato" id="selectTipoContrato">
+            <option value="A0">Selecione</option>
+            {%for contrato in contratos %}
+              <option value="{{contrato.id}}">{{contrato.nombreContrato}}</option>
+            {%endfor%}
+          </select>
+        </div>
+        </div>
+        <div class="col-md-6">
+            </br><button type="button" class="btn btn-success" id="btnAgregarEmpleado">Agregar empleado</button>
+        </div>
+      </form>
+    </div>
+
+  {%endblock%}
+
+{%block javaScripts%}
+  {{parent()}}
+  <script src="{{asset('bundles/symplifica/js/empleado.js')}}"> </script>
+{%endblock%}

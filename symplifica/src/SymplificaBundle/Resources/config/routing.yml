@@ -1,3 +1,25 @@
 symplifica_homepage:
     path:     /
     defaults: { _controller: SymplificaBundle:Default:index }
+
+symplifica_empleador:
+    path:     /empleador
+    defaults: { _controller: SymplificaBundle:Empleador:EmpleadorAddView }
+
+symplifica_empleador_create:
+    path:     /empleador/create
+    defaults: { _controller: SymplificaBundle:Empleador:EmpleadorCreate }
+
+
+symplifica_empleado:
+    path:     /empleado
+    defaults: { _controller: SymplificaBundle:Empleado:EmpleadoAddView }
+
+symplifica_empleado_create:
+    path:     /empleado/create
+    defaults: { _controller: SymplificaBundle:Empleado:EmpleadoCreate }
+
+symplifica_reporte:
+    path:     /reporte
+    defaults: { _controller: SymplificaBundle:Reporte:ReporteSelectView }
+
